@@ -13,30 +13,31 @@ const loginMutation = async (credentials: LoginDto) => {
 };
 
 const Login = () => {
-  const paperStyle = {
-    padding: '30px 20px', // Adjusted padding in mobile view
-    height: '85vh', // Default height for desktop view
+  const desktopStyle = {
+    padding: '30px 20px',
+    height: '60vh',
     width: '400px',
     margin: '10px auto',
-    '@media (min-width: 600px)': {
-      height: '100vh', // Full viewport height for tablets and larger screens
-    },
-    '@media (max-width: 480px)': {
-      height: '100vh', // Full viewport height for mobile devices
-      width: '100%',
-      maxWidth: '300px',
-      maxHeight: 'calc(100vh - 120px)', // Adjusted height to accommodate other elements on small mobile screens
-      overflow: 'hidden',
+    '@media (min-width: 960px)': {
+      maxWidth: '600px',
+      maxHeight: '600px',
     },
   };
-  
-  
-  
+
+  const mobileStyle = {
+    padding: '30px 20px',
+    height: '100vh',
+    width: '100%',
+    maxWidth: '300px',
+    maxHeight: 'calc(100vh - 120px)',
+    margin: '10px auto',
+    overflow: 'hidden',
+  };
+
   const avatarStyle = { backgroundColor: '#1bbd7e' };
   const btnStyle = { margin: '8px 0' };
 
   const mutation = useMutation(loginMutation, {
-    // Define the query key
     mutationKey: 'login',
   });
 
@@ -49,8 +50,11 @@ const Login = () => {
     mutation.mutate(dto);
   };
 
+  const isMobileView = window.innerWidth <= 480;
+
   return (
     <Grid container justifyContent="center">
+      <Paper elevation={10} style={isMobileView ? mobileStyle : desktopStyle}>
       <Paper elevation={10} style={paperStyle}>
         <Grid>
           <Avatar style={avatarStyle}>
@@ -82,6 +86,7 @@ const Login = () => {
         <Typography sx={{ fontSize: '0.9rem' }}>
           Do you have an account? <Link href="#">Sign Up</Link>
         </Typography>
+      </Paper>
       </Paper>
     </Grid>
   );

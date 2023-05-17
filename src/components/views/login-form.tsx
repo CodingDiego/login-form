@@ -72,7 +72,6 @@ const Login = () => {
     placeholder="Enter username"
     fullWidth
     required
-    //sx={{ width: '100%', maxWidth: '400px' }} // Adjust the max-width value as needed
   />
 </Grid>
 <Grid item sx={{width: '80%', maxWidth: '400px'}}>
@@ -82,8 +81,7 @@ const Login = () => {
     type="password"
     fullWidth
     required
-    //sx={{ width: '100%', maxWidth: '400px' }} // Adjust the max-width value as needed
-  />
+ />
 </Grid>
           <Grid item>
             <FormControlLabel

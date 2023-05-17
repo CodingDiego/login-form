@@ -1,6 +1,6 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Login from './components/shared/form/login-form';
+import Login from './components/views/login-form';
 
 const queryClient = new QueryClient();
 

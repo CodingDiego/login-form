@@ -14,18 +14,21 @@ const loginMutation = async (credentials: LoginDto) => {
 
 const Login = () => {
   const paperStyle = {
-    padding: '24px 15px',
-    height: '84vh',
-    width: '400px',
+    padding: '15px 15px',
+    height: '83vh',
+    width: '100%',
+    maxWidth: '400px',
     margin: '15px auto',
     justifyContent: 'center',
+    borderRadius: '10px',
     '@media (min-width: 600px)': {
       height: '100vh',
+      maxWidth: '500px'
     },
     '@media (max-width: 480px)': {
       height: '100vh',
       width: '100%',
-      maxWidth: '300px',
+      maxWidth: '500px',
       maxHeight: 'calc(100vh - 115px)',
       overflow: 'hidden',
     },
@@ -52,7 +55,7 @@ const Login = () => {
   return (
     <Grid container justifyContent="center">
       <Paper elevation={10} style={paperStyle}>
-        <Grid container direction="column" alignItems="center" spacing={2.3}>
+        <Grid container direction="column" alignItems="center" spacing={2}>
           <Grid item>
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -63,12 +66,25 @@ const Login = () => {
               Sign In
             </Typography>
           </Grid>
-          <Grid item>
-            <TextField label="Username" placeholder="Enter username" fullWidth required sx={{width: '110%'}} />
-          </Grid>
-          <Grid item>
-            <TextField label="Password" placeholder="Enter password" type="password" fullWidth required sx={{width: '110%'}} />
-          </Grid>
+          <Grid item sx={{width: '80%', maxWidth: '400px'}}>
+  <TextField
+    label="Username"
+    placeholder="Enter username"
+    fullWidth
+    required
+    //sx={{ width: '100%', maxWidth: '400px' }} // Adjust the max-width value as needed
+  />
+</Grid>
+<Grid item sx={{width: '80%', maxWidth: '400px'}}>
+  <TextField
+    label="Password"
+    placeholder="Enter password"
+    type="password"
+    fullWidth
+    required
+    //sx={{ width: '100%', maxWidth: '400px' }} // Adjust the max-width value as needed
+  />
+</Grid>
           <Grid item>
             <FormControlLabel
               control={<Checkbox name="checkedB" color="primary" />}

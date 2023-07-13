@@ -56,10 +56,9 @@ const EditUser: React.FC<EditUserProps> = ({ token }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      navigate('/home'); // Redirect to the home page
+      navigate('/home');
     } catch (error) {
       console.error('Error updating user:', error);
-      // Handle the error accordingly, such as displaying an error message.
     }
   };
 

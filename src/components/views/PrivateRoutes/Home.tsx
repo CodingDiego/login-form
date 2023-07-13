@@ -12,8 +12,8 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { User, fetchUsers, deleteUser } from '../../utils/helpers';
-import { Link, useNavigate } from 'react-router-dom';
+import { fetchUsers, deleteUser } from '../../utils/helpers';
+import { useNavigate } from 'react-router-dom';
 
 interface UserProps {
   id: string;

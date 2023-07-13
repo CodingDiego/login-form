@@ -30,10 +30,9 @@ const CreateUser: React.FC<CreateUserProps> = ({ token }) => {
         },
       });
       console.log('User created:', response.data);
-      navigate('/home'); // Redirect to the home page
+      navigate('/home');
     } catch (error) {
       console.error('Error creating user:', error);
-      // Handle the error accordingly, such as displaying an error message.
     }
   };
 

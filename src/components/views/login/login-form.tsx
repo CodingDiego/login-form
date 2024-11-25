@@ -26,14 +26,11 @@ const Login: React.FC<LoginProps> = ({ setToken }) => {
       const response = await axios.post('http://localhost:5005/auth/login', loginData);
       const { token, user } = response.data;
 
-      // Almacenar las credenciales en el almacenamiento local (localStorage)
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
-      // Actualizar el token en el componente padre
       setToken(token);
 
-      // Redireccionar a la página de inicio
       history('/home');
     } catch (error) {
       // Manejar los errores de la solicitud aquí

@@ -33,7 +33,6 @@ const Login: React.FC<LoginProps> = ({ setToken }) => {
 
       history('/home');
     } catch (error) {
-      // Manejar los errores de la solicitud aquí
       console.error('Login failed:', error);
     }
   };
